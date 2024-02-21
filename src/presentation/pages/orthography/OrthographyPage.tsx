@@ -6,7 +6,7 @@ import {
   TextMessageBox,
   TypingLoader,
 } from "../../components";
-import { orthographyUseCases } from "../../../core/use-cases";
+import { orthographyUseCase } from "../../../core/use-cases";
 
 interface Message {
   text: string;
@@ -25,7 +25,7 @@ export const OrthographyPage = () => {
   const handlePost = async (text: string) => {
     setIsLoading(true);
     setMessages((prev) => [...prev, { text: text, isGpt: false }]);
-    const { ok, errors, message, userScore } = await orthographyUseCases(text);
+    const { ok, errors, message, userScore } = await orthographyUseCase(text);
     if (!ok) {
       setMessages((prev) => [
         ...prev,

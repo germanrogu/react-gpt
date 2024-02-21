@@ -1,6 +1,6 @@
 import { OrthographyResponse } from "../../interfaces";
 
-export const orthographyUseCases = async (prompt: string) => {
+export const orthographyUseCase = async (prompt: string) => {
   try {
     const resp = await fetch(
       `${import.meta.env.VITE_GPT_API}/orthography-check`,
